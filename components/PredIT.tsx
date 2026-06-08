@@ -20,7 +20,7 @@ export default function PredIT() {
   }
 
   return (
-    <main className="min-h-screen bg-cream">
+    <main className="min-h-screen bg-background">
       <div className="noise-overlay" />
       <Navbar />
       <Hero />

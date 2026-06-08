@@ -9,13 +9,13 @@ interface FormStep3Props {
 
 export default function FormStep3({ data, setData, errors }: FormStep3Props) {
   return (
-    <div className="animate-slideIn space-y-8 px-9 py-8 max-sm:px-5">
+    <div className="animate-slideIn space-y-10 px-10 py-10 max-sm:px-6">
       <div>
-        <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-sage-dk">
-          Academics & Health
+        <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">
+          Step 3 of 4
         </p>
-        <h2 className="font-playfair text-3xl font-bold text-plum">
-          Your performance<br />& wellbeing
+        <h2 className="font-playfair text-3xl font-bold text-foreground">
+          Your <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Performance & Wellbeing</span>
         </h2>
       </div>
 

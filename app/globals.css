@@ -3,21 +3,21 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Design Tokens - PredIT Color System */
+/* Design Tokens - PredIT Color System (Modern Premium) */
 :root {
-  --plum: #452B30;
-  --mauve: #74404C;
-  --cream: #F3ECD8;
-  --cream-dk: #EAE0C8;
-  --sage: #C7C79E;
-  --sage-dk: #9e9e72;
-  --text: #452B30;
-  --text-mid: #74404C;
-  --muted: #9e8a80;
-  --border: rgba(69,43,48,0.12);
-  --shadow: rgba(69,43,48,0.18);
-  --radius: 18px;
-  --radius-sm: 12px;
+  --plum: #6B5B95;
+  --mauve: #8B7BA8;
+  --cream: #F8F6F3;
+  --cream-dk: #EFE9E0;
+  --sage: #A8A68F;
+  --sage-dk: #8B8976;
+  --text: #2B2416;
+  --text-mid: #4A4239;
+  --muted: #A39E94;
+  --border: rgba(43, 36, 22, 0.08);
+  --shadow: rgba(43, 36, 22, 0.12);
+  --radius: 20px;
+  --radius-sm: 14px;
 }
 
 @theme inline {
@@ -66,21 +66,21 @@
 
 /* Light mode - PredIT design system */
 :root {
-  --background: #F3ECD8;
-  --foreground: #452B30;
-  --card: #ffffff;
-  --card-foreground: #452B30;
-  --primary: #452B30;
-  --primary-foreground: #F3ECD8;
-  --secondary: #74404C;
-  --secondary-foreground: #F3ECD8;
-  --muted: #9e8a80;
-  --muted-foreground: #9e8a80;
-  --accent: #C7C79E;
-  --accent-foreground: #452B30;
-  --border: rgba(69,43,48,0.12);
-  --input: #F3ECD8;
-  --ring: #452B30;
+  --background: #FBFAF8;
+  --foreground: #2B2416;
+  --card: #FFFFFF;
+  --card-foreground: #2B2416;
+  --primary: #6B5B95;
+  --primary-foreground: #FBFAF8;
+  --secondary: #8B7BA8;
+  --secondary-foreground: #FBFAF8;
+  --muted: #A39E94;
+  --muted-foreground: #A39E94;
+  --accent: #A8A68F;
+  --accent-foreground: #2B2416;
+  --border: rgba(43, 36, 22, 0.08);
+  --input: #FBFAF8;
+  --ring: #6B5B95;
 }
 
 @layer base {

@@ -7,54 +7,50 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative overflow-hidden px-12 py-20 text-center max-sm:px-5 max-sm:py-16">
-      {/* Decorative circles */}
-      <div className="pointer-events-none absolute top-0 left-0 z-0 h-96 w-96 -translate-x-1/3 -translate-y-1/4 rounded-full border border-border opacity-50" />
-      <div className="pointer-events-none absolute top-10 right-0 z-0 h-72 w-72 translate-x-1/4 rounded-full border border-border opacity-40" />
-      <div className="pointer-events-none absolute bottom-8 left-10 z-0 h-32 w-32 rounded-full bg-sage opacity-12" />
+    <section className="relative overflow-hidden px-14 py-28 text-center max-sm:px-6 max-sm:py-20">
+      {/* Decorative elements */}
+      <div className="pointer-events-none absolute top-0 right-0 -z-10 h-[600px] w-[600px] -translate-x-1/4 -translate-y-1/3 rounded-full bg-gradient-to-br from-primary/8 to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-0 -z-10 h-[400px] w-[400px] -translate-x-1/4 translate-y-1/3 rounded-full bg-gradient-to-tr from-secondary/6 to-transparent blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-2xl">
-        <div className="mb-6 inline-flex items-center gap-2">
-          <span className="inline-block h-2 w-2 rounded-full bg-sage-dk" />
-          <span className="text-xs font-semibold uppercase tracking-widest text-mauve">
-            ML-Powered Prediction
+      <div className="relative z-10 mx-auto max-w-3xl">
+        <div className="mb-8 inline-flex items-center gap-3">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
+          <span className="text-xs font-semibold uppercase tracking-widest text-primary">
+            Machine Learning Powered
           </span>
-          <span className="inline-block h-2 w-2 rounded-full bg-sage-dk" />
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
         </div>
 
-        <h1 className="mb-6 font-playfair text-6xl font-bold leading-tight text-plum max-sm:text-4xl">
-          Predict your <em className="font-playfair italic text-mauve">Exam Score</em>
+        <h1 className="mb-8 font-playfair text-6xl font-bold leading-tight text-foreground max-sm:text-4xl">
+          Predict Your <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Exam Score</span>
         </h1>
 
-        <p className="mb-10 text-lg font-light leading-relaxed text-muted">
-          Answer a few questions about your study habits, environment, and lifestyle.
-          Our model will predict your exam performance instantly.
+        <p className="mb-12 text-lg font-light leading-relaxed text-foreground/70">
+          Answer 20 questions about your study habits, environment, and lifestyle. Our ML model will instantly predict your exam performance with 77% accuracy.
         </p>
 
-        <div className="mb-11 flex flex-wrap items-center justify-center gap-5 max-sm:gap-3">
-          <div className="text-center">
-            <div className="font-playfair text-3xl font-bold text-plum max-sm:text-2xl">
+        <div className="mb-14 grid grid-cols-3 gap-6 max-sm:gap-3">
+          <div className="rounded-2xl bg-card p-5 shadow-sm border border-border">
+            <div className="font-playfair text-3xl font-bold text-primary max-sm:text-2xl">
               20
             </div>
-            <div className="text-xs uppercase tracking-wider text-muted max-sm:text-xs">
+            <div className="text-xs uppercase tracking-wider text-muted font-medium">
               Features
             </div>
           </div>
-          <div className="text-2xl font-light text-border max-sm:text-lg">·</div>
-          <div className="text-center">
-            <div className="font-playfair text-3xl font-bold text-plum max-sm:text-2xl">
+          <div className="rounded-2xl bg-card p-5 shadow-sm border border-border">
+            <div className="font-playfair text-3xl font-bold text-primary max-sm:text-2xl">
               77%
             </div>
-            <div className="text-xs uppercase tracking-wider text-muted max-sm:text-xs">
+            <div className="text-xs uppercase tracking-wider text-muted font-medium">
               Accuracy
             </div>
           </div>
-          <div className="text-2xl font-light text-border max-sm:text-lg">·</div>
-          <div className="text-center">
-            <div className="font-playfair text-3xl font-bold text-plum max-sm:text-2xl">
+          <div className="rounded-2xl bg-card p-5 shadow-sm border border-border">
+            <div className="font-playfair text-3xl font-bold text-primary max-sm:text-2xl">
               4
             </div>
-            <div className="text-xs uppercase tracking-wider text-muted max-sm:text-xs">
+            <div className="text-xs uppercase tracking-wider text-muted font-medium">
               Steps
             </div>
           </div>
@@ -62,10 +58,10 @@ export default function Hero() {
 
         <button
           onClick={scrollToForm}
-          className="inline-flex items-center gap-2.5 rounded-full bg-plum px-8 py-3.5 font-semibold text-cream shadow-lg shadow-plum/28 transition-all duration-200 hover:bg-mauve hover:shadow-lg hover:shadow-mauve/35 hover:-translate-y-0.5"
+          className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-secondary px-9 py-4 font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:shadow-xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0"
         >
           <span>Start Prediction</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform duration-200 group-hover:translate-y-1">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-y-1">
             <path
               d="M8 3v10M3 8l5 5 5-5"
               stroke="currentColor"
