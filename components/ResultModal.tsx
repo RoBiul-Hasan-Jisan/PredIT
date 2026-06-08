@@ -80,14 +80,14 @@ export default function ResultModal({ isOpen, score, onClose }: ResultModalProps
     <>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 z-50 flex items-center justify-center bg-plum/55 backdrop-blur-lg transition-opacity duration-300 max-sm:px-5 ${
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-lg transition-opacity duration-300 max-sm:px-5 ${
           isOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
         }`}
         onClick={onClose}
       >
         {/* Modal */}
         <div
-          className={`relative max-w-lg w-full rounded-3xl border border-border bg-cream p-11 shadow-2xl transition-all duration-350 max-sm:p-8 ${
+          className={`relative max-w-lg w-full rounded-3xl border border-border bg-card p-12 shadow-2xl transition-all duration-300 max-sm:p-8 ${
             isOpen ? 'translate-y-0 scale-100' : 'translate-y-6 scale-95'
           }`}
           onClick={(e) => e.stopPropagation()}
@@ -95,58 +95,55 @@ export default function ResultModal({ isOpen, score, onClose }: ResultModalProps
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute right-4.5 top-4.5 flex h-9 w-9 items-center justify-center rounded-full bg-cream-dk text-muted transition-all hover:border-plum hover:bg-plum hover:text-cream border border-border"
+            className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-border/50 text-muted transition-all hover:bg-primary hover:text-white"
           >
             ✕
           </button>
 
           {/* Logo */}
-          <div className="mb-7 flex justify-center">
-            <div className="relative inline-flex">
-              <div className="absolute inset-0 -z-10 translate-x-1 translate-y-1 rounded-lg bg-plum" />
-              <div className="relative inline-flex items-center gap-1 rounded-lg border-2 border-plum bg-cream px-3 py-1.5">
-                <span className="font-playfair text-lg italic font-bold text-mauve">
-                  %
-                </span>
-                <span className="font-playfair text-lg font-bold text-plum">
-                  PredIT
-                </span>
-              </div>
+          <div className="mb-8 flex justify-center">
+            <div className="flex items-center gap-2 rounded-xl bg-gradient-to-br from-primary to-secondary p-2 shadow-lg shadow-primary/15">
+              <span className="font-playfair text-lg italic font-bold text-white">
+                %
+              </span>
+              <span className="font-playfair text-lg font-bold text-white">
+                PredIT
+              </span>
             </div>
           </div>
 
           {/* Result label */}
-          <p className="mb-2.5 text-center text-xs font-semibold uppercase tracking-wide text-muted">
+          <p className="mb-3 text-center text-xs font-semibold uppercase tracking-widest text-muted">
             Predicted Exam Score
           </p>
 
           {/* Score display */}
-          <div className="mb-3.5 flex items-baseline justify-center gap-1.5">
-            <span className="font-playfair text-8xl font-bold leading-none text-plum">
+          <div className="mb-5 flex items-baseline justify-center gap-1.5">
+            <span className="font-playfair text-8xl font-bold leading-none bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               {displayScore}
             </span>
             <span className="font-playfair text-3xl text-muted">/ 100</span>
           </div>
 
           {/* Progress bar */}
-          <div className="mb-3.5 h-1.5 w-full rounded-full bg-cream-dk overflow-hidden">
+          <div className="mb-5 h-2 w-full rounded-full bg-border/30 overflow-hidden">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-mauve to-sage-dk transition-all duration-1200"
+              className="h-full rounded-full bg-gradient-to-r from-primary to-secondary transition-all duration-1200"
               style={{ width: `${fillWidth}%` }}
             />
           </div>
 
           {/* Grade */}
-          <p className="mb-5.5 text-center font-playfair text-base font-semibold text-mauve">
+          <p className="mb-6 text-center font-playfair text-lg font-semibold text-primary">
             {gradeInfo.grade}
           </p>
 
           {/* Divider */}
-          <div className="mb-5.5 h-px bg-border" />
+          <div className="mb-6 h-px bg-border/50" />
 
           {/* Message */}
           <p
-            className="mb-7 text-left text-sm font-light leading-relaxed text-muted"
+            className="mb-7 text-left text-sm font-light leading-relaxed text-foreground/70"
             dangerouslySetInnerHTML={{
               __html: gradeInfo.message,
             }}
@@ -155,7 +152,7 @@ export default function ResultModal({ isOpen, score, onClose }: ResultModalProps
           {/* Retry button */}
           <button
             onClick={onClose}
-            className="w-full rounded-lg border-1.5 border-border bg-transparent px-4 py-3.5 text-sm font-medium text-plum transition-all hover:border-plum hover:bg-plum hover:text-cream"
+            className="w-full rounded-full border border-primary bg-transparent px-4 py-3 text-sm font-medium text-primary transition-all hover:bg-primary hover:text-white"
           >
             ↺ Try Different Values
           </button>

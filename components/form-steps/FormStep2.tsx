@@ -9,13 +9,13 @@ interface FormStep2Props {
 
 export default function FormStep2({ data, setData, errors }: FormStep2Props) {
   return (
-    <div className="animate-slideIn space-y-8 px-9 py-8 max-sm:px-5">
+    <div className="animate-slideIn space-y-10 px-10 py-10 max-sm:px-6">
       <div>
-        <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-sage-dk">
-          Study Habits
+        <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">
+          Step 2 of 4
         </p>
-        <h2 className="font-playfair text-3xl font-bold text-plum">
-          How do you<br />spend your time?
+        <h2 className="font-playfair text-3xl font-bold text-foreground">
+          How do you <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Spend Your Time</span>?
         </h2>
       </div>
 

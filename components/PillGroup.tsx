@@ -25,21 +25,21 @@ export default function PillGroup({
   )
 
   return (
-    <div className={`space-y-3 ${hasError ? 'animate-shake' : ''}`} data-field={field}>
-      <label className="block text-sm font-medium text-text-mid">
+    <div className={`space-y-4 ${hasError ? 'animate-shake' : ''}`} data-field={field}>
+      <label className="block text-sm font-semibold text-foreground">
         {label}
       </label>
-      <div className={`flex flex-wrap gap-2.5 rounded-lg p-1 transition-colors ${hasError ? 'border border-[#d4826a] bg-[#d4826a]/5' : ''}`}>
+      <div className={`flex flex-wrap gap-3 rounded-2xl p-2 transition-all ${hasError ? 'border border-red-400/50 bg-red-50/50' : 'bg-background/50'}`}>
         {normalizedOptions.map((option) => (
           <button
             key={option.value}
             onClick={() => onChange(option.value)}
-            className={`rounded-full border-1.5 px-5 py-2.5 text-sm font-medium transition-all duration-150 ${
+            className={`rounded-full border px-6 py-2.5 text-sm font-medium transition-all duration-200 ${
               value === option.value
-                ? 'border-plum bg-plum text-cream shadow-md shadow-plum/20'
+                ? 'border-primary bg-gradient-to-r from-primary to-secondary text-white shadow-md shadow-primary/25'
                 : hasError
-                  ? 'border-[#d4826a] bg-transparent text-[#d4826a]'
-                  : 'border-border bg-cream text-muted hover:border-mauve hover:bg-mauve/5 hover:text-mauve'
+                  ? 'border-red-400/50 bg-red-50 text-red-700 hover:border-red-500 hover:bg-red-100'
+                  : 'border-border bg-card text-muted hover:border-primary hover:bg-primary/5 hover:text-primary'
             }`}
           >
             {option.label}

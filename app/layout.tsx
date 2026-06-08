@@ -27,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${dmSans.variable}`} style={{ backgroundColor: '#F3ECD8' }}>
-      <body className="antialiased font-sans" style={{ backgroundColor: '#F3ECD8', color: '#452B30' }}>
+    <html lang="en" className={`${playfairDisplay.variable} ${dmSans.variable} bg-background`}>
+      <body className="antialiased font-sans bg-background text-foreground">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

@@ -106,21 +106,21 @@ export default function FormCard({ onPredictionComplete }: FormCardProps) {
   }
 
   return (
-    <div className="relative z-10 mx-auto max-w-2xl px-6 pb-32 pt-8 max-sm:px-4">
-      <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-2xl">
+    <div className="relative z-10 mx-auto max-w-2xl px-8 pb-32 pt-10 max-sm:px-5">
+      <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-lg">
         {/* Top bar */}
-        <div className="flex items-center justify-between border-b border-border px-9 py-6 max-sm:px-5">
-          <span className="text-sm text-muted">
-            Step <strong className="text-plum">{currentStep}</strong> of {TOTAL_STEPS}
+        <div className="flex items-center justify-between border-b border-border px-10 py-7 max-sm:px-6 max-sm:py-5">
+          <span className="text-sm font-medium text-muted">
+            Step <strong className="text-primary font-semibold">{currentStep}</strong> of {TOTAL_STEPS}
           </span>
-          <div className="flex gap-2">
+          <div className="flex gap-2.5">
             {Array.from({ length: TOTAL_STEPS }).map((_, i) => {
               const step = i + 1
-              let dotClass = 'h-2 w-2 rounded-full bg-cream-dk transition-all duration-300'
+              let dotClass = 'h-2 w-2 rounded-full bg-border transition-all duration-300'
               if (step === currentStep) {
-                dotClass = 'h-2 w-5.5 rounded-full bg-plum transition-all duration-300'
+                dotClass = 'h-2 w-6 rounded-full bg-primary transition-all duration-300'
               } else if (step < currentStep) {
-                dotClass = 'h-2 w-2 rounded-full bg-sage-dk transition-all duration-300'
+                dotClass = 'h-2 w-2 rounded-full bg-secondary transition-all duration-300'
               }
               return <div key={step} className={dotClass} id={`dot-${step}`} />
             })}
@@ -128,9 +128,9 @@ export default function FormCard({ onPredictionComplete }: FormCardProps) {
         </div>
 
         {/* Progress bar */}
-        <div className="h-0.5 bg-cream-dk">
+        <div className="h-1 bg-border/40">
           <div
-            className="h-full bg-gradient-to-r from-mauve to-sage-dk transition-all duration-500"
+            className="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-500"
             style={{ width: `${(currentStep / TOTAL_STEPS) * 100}%` }}
           />
         </div>
@@ -168,13 +168,13 @@ export default function FormCard({ onPredictionComplete }: FormCardProps) {
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center justify-between border-t border-border px-9 py-5 max-sm:px-5">
+        <div className="flex items-center justify-between border-t border-border px-10 py-6 max-sm:px-6">
           {currentStep === 1 ? (
             <div />
           ) : (
             <button
               onClick={handleBack}
-              className="rounded-full border border-border bg-transparent px-6 py-2.5 text-sm font-medium text-muted transition-all hover:border-plum hover:text-plum"
+              className="rounded-full border border-border bg-transparent px-6 py-2.5 text-sm font-medium text-muted transition-all hover:border-primary hover:bg-primary/5 hover:text-primary"
             >
               ← Back
             </button>
@@ -184,15 +184,15 @@ export default function FormCard({ onPredictionComplete }: FormCardProps) {
             <button
               onClick={handleSubmit}
               disabled={isLoading}
-              className="flex items-center gap-3 rounded-lg bg-plum px-8 py-3.5 font-playfair text-lg font-bold text-cream shadow-lg shadow-plum/25 transition-all duration-200 disabled:opacity-55 hover:bg-mauve hover:shadow-lg hover:shadow-mauve/30 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+              className="flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-secondary px-8 py-3 font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 disabled:opacity-50 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1 disabled:cursor-not-allowed disabled:hover:translate-y-0 active:translate-y-0"
             >
               {isLoading ? (
                 <>
-                  <span style={{ display: isLoading ? 'none' : 'inline' }}>
-                    Predict My Score
+                  <span style={{ display: isLoading ? 'none' : 'inline' }} className="font-medium">
+                    Predicting...
                   </span>
                   <span
-                    className="inline-block h-4.5 w-4.5 animate-spin rounded-full border-2 border-cream/30 border-t-cream"
+                    className="inline-block h-4.5 w-4.5 animate-spin rounded-full border-2 border-white/30 border-t-white"
                     style={{ display: isLoading ? 'inline-block' : 'none' }}
                   />
                 </>
@@ -206,7 +206,7 @@ export default function FormCard({ onPredictionComplete }: FormCardProps) {
           ) : (
             <button
               onClick={handleNext}
-              className="rounded-full border border-plum bg-cream px-6 py-2.5 text-sm font-semibold text-plum transition-all hover:bg-plum hover:text-cream"
+              className="rounded-full border border-primary bg-transparent px-6 py-2.5 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-white"
             >
               Next →
             </button>

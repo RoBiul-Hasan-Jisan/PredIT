@@ -8,13 +8,13 @@ interface FormStep1Props {
 
 export default function FormStep1({ data, setData, errors }: FormStep1Props) {
   return (
-    <div className="animate-slideIn space-y-8 px-9 py-8 max-sm:px-5">
+    <div className="animate-slideIn space-y-10 px-10 py-10 max-sm:px-6">
       <div>
-        <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-sage-dk">
-          About You
+        <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">
+          Step 1 of 4
         </p>
-        <h2 className="font-playfair text-3xl font-bold text-plum">
-          Let&apos;s start with<br />the basics
+        <h2 className="font-playfair text-3xl font-bold text-foreground">
+          Tell us <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">About You</span>
         </h2>
       </div>
 
